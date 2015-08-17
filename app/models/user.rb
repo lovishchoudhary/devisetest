@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
     {
       id: self.id,
       email: self.email
+      #auth_token: self.auth_token
     }
   end
 end

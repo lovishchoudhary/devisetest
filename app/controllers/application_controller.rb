@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   #skip_before_action :verify_authenticity_token, if: :json_request?
   before_action :authenticate_user!
   acts_as_token_authentication_handler_for User
-
+  include ActionController::MimeResponds
+  include ActionController::ImplicitRender
+  respond_to :html, :json
+  
    protected
 
   def json_request?
